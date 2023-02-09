@@ -10,6 +10,9 @@
                 <Image Source="LOGO_NATK.jpg" Aspect="AspectFill" Scale="3.8"/>
             </Frame>
             <Label Text="Личный кабинет" VerticalOptions="Center" FontSize="25" FontAttributes="Bold" TextColor="White"/>
+            
+                <ImageButton x:Name="BtnLogout" CornerRadius="150" Source="exit.png" BackgroundColor="{DynamicResource Main}" WidthRequest="50" HorizontalOptions="EndAndExpand" Clicked="BtnLogout_OnClicked"/>
+            
         </StackLayout>
         <StackLayout Padding="15,10,15,20">
             <Frame Padding="0" BackgroundColor="{DynamicResource Main}" BorderColor="Black" Margin="0,0,0,-6" CornerRadius="0">

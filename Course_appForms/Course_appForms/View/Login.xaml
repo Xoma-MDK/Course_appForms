@@ -13,6 +13,8 @@
             <Entry x:Name="EntLogin" Placeholder="Логин" HorizontalTextAlignment="Center"/>
             <Entry x:Name="EntPassword" Placeholder="Пароль" HorizontalTextAlignment="Center" IsPassword="True"/>
             <Button Clicked="Login_Clicked" Text="Войти" CornerRadius="10" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="White" BackgroundColor="{DynamicResource BlueDark}"/>
+            <ActivityIndicator x:Name="loadingIndicator" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Color="{DynamicResource BlueDark}"/>
+            <Label x:Name="LbLoad" Text="Авторизация..." IsVisible="False" VerticalOptions="StartAndExpand" HorizontalOptions="Center" FontSize="16" FontAttributes="Bold" TextColor="White"/>
         </StackLayout>
     </Grid>
 </ContentPage>

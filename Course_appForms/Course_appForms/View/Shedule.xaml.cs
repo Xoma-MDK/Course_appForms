@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Course_appForms.Models;
 using Course_appForms.Services;
+using Xamarin.CommunityToolkit.Extensions;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,12 +16,18 @@ namespace Course_appForms.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Shedule : ContentPage
-	{
-
-        public Shedule ()
+    {
+        private User user;
+        public Shedule()
 		{
 			InitializeComponent ();
-            GetInfo();
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                this.DisplayToastAsync("Нет подключения к сети", 5000);
+                return;
+            }
+            user = (User)Application.Current.Properties["user"];
+            Load();
             refreshView.Command = new RefreshCommand();
             refreshView.CommandParameter = this;
             refreshView.IsRefreshing= true;
@@ -27,7 +36,13 @@ namespace Course_appForms.View
 
         public async void Refesh()
         {
-            var user = await UserService.GetMe();
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                await this.DisplayToastAsync("Нет подключения к сети", 5000);
+                refreshView.IsRefreshing = false;
+                return;
+            }
+            //var user = await UserService.GetMe();
             if (user.Role == 1)
             {
                 var list = await SheduleService.GetShedule(user.Studygroup, user.Substudygroup);
@@ -40,10 +55,9 @@ namespace Course_appForms.View
             }
             refreshView.IsRefreshing = false;
         }
-        protected async void GetInfo()
+        protected void Load()
         {
-            var user = await UserService.GetMe();
-            if(user.Role == 2)lbGroup.Text = user.Studygroup;
+            if(user.Role != 2)lbGroup.Text = user.Studygroup;
         }
         public class RefreshCommand : ICommand
         {

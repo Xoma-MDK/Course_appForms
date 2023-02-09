@@ -36,7 +36,16 @@ namespace Course_appForms.Http
             return null;
         }
 
+        public static async Task Logout(string token)
+        {
+            HttpClient headerApi = new HttpClient()
+            {
+                BaseAddress = Api.api.BaseAddress
+            };
 
+            headerApi.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            await headerApi.PostAsync("auth/logout", null);
+        }
 
 
         public static async Task<Tokens> Refresh(string refreshToken)

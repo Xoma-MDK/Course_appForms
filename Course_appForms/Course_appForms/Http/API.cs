@@ -17,11 +17,10 @@ namespace Course_appForms.Http
 {
     internal class Api
     {
-        public static readonly string BaseIpAddress = "176.126.103.27";
 
         public static HttpClient api = new HttpClient()
         {
-            BaseAddress = new Uri($"http://{BaseIpAddress}:8123/"),
+            BaseAddress = new Uri($"https://norkaxomica.ru/api/"),
         };
 
         public static async Task<string> TokenyzeGet(string url, Tokens tokens)

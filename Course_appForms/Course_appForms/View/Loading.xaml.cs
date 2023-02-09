@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Course_appForms.Models;
 using Course_appForms.Services;
+using Xamarin.CommunityToolkit.Extensions;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -19,9 +21,15 @@ namespace Course_appForms.View
         }
         protected override async void OnAppearing()
         {
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                await this.DisplayToastAsync("Нет подключения к сети", 5000);
+                Application.Current.MainPage = new Login();
+            }
             User user = await UserService.GetMe();
             if (user != null)
             {
+                Application.Current.Properties["user"] = user;
                 if (user.Role == 1)
                     Application.Current.MainPage = new ShellAPP();
                 if (user.Role == 2)

@@ -13,17 +13,18 @@ namespace Course_appForms.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Lk : ContentPage
-	{
+    {
+        private User user;
 		public Lk ()
 		{
 
             InitializeComponent ();
-            GetInfo();
+            user = (User)Application.Current.Properties["user"];
+            Load();
 		}
 
-        protected async void GetInfo()
+        protected void Load()
         {
-            User user = await UserService.GetMe();
             LbFIO.Text = $"{user.Surname} {user.Name}\n{user.Patronymic}";
             if (user.Role == 1)
             {
@@ -45,6 +46,13 @@ namespace Course_appForms.View
         private async void BtnAchievements_OnClicked(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new Achievements());
+        }
+
+        private void BtnLogout_OnClicked(object sender, EventArgs e)
+        {
+            AuthService.Logout();
+            Application.Current.Properties.Remove("user");
+            Application.Current.MainPage = new Login();
         }
     }
 }

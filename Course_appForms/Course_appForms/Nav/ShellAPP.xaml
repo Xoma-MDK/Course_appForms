@@ -11,9 +11,6 @@
         <Tab Title="Занятия" Icon="shedule_icon.png" >
             <ShellContent ContentTemplate="{DataTemplate View:Shedule}"/>
         </Tab>
-        <Tab Title="Кабинеты" Icon="shedule_icon.png">
-            <ShellContent ContentTemplate="{DataTemplate View:SheduleClassRoom}"/>
-        </Tab>
         <Tab Title="Профиль" Icon="lk_icon.png">
             <ShellContent ContentTemplate="{DataTemplate View:Lk}"/>
         </Tab>

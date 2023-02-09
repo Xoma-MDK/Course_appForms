@@ -2,6 +2,7 @@
 using Course_appForms.Models;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Essentials;
@@ -22,10 +23,24 @@ namespace Course_appForms.Services
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex);
+                Debug.WriteLine(ex);
             }
 
             return true;
+        }
+        public static async void Logout()
+        {
+            try
+            {
+                string at = await SecureStorage.GetAsync(StorageKey.AccessToken);
+                await AuthApi.Logout(at);
+                SecureStorage.Remove(StorageKey.AccessToken);
+                SecureStorage.Remove(StorageKey.RefreshToken);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
         }
     }
 }

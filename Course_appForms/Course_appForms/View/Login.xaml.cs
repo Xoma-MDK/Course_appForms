@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Course_appForms.Models;
 using Course_appForms.Services;
 using Xamarin.Forms;
+using Xamarin.CommunityToolkit.Extensions;
+using Xamarin.Essentials;
 
 namespace Course_appForms
 {
@@ -18,11 +20,21 @@ namespace Course_appForms
         }
         private async void Login_Clicked(object sender, EventArgs e)
         {
+            loadingIndicator.IsRunning = true;
+            LbLoad.IsVisible = true;
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                loadingIndicator.IsVisible = false;
+                LbLoad.IsVisible = false;
+                await this.DisplayToastAsync("Нет подключения к сети", 5000);
+                return;
+            }
             string login = EntLogin.Text;
             string password = EntPassword.Text;
             if (await AuthService.Login(login, password))
             {
                 User user = await UserService.GetMe();
+                Application.Current.Properties["user"] = user;
                 if (user.Role == 1)
                     Application.Current.MainPage = new ShellAPP();
                 if (user.Role == 2)
@@ -30,7 +42,9 @@ namespace Course_appForms
             }
             else
             {
-                await DisplayAlert("Ошибка!", $"Не верный логин или пароль.", "close");
+                loadingIndicator.IsVisible = false;
+                LbLoad.IsVisible = false;
+                await this.DisplayToastAsync("Не верный логин или пароль.", 3000);
             }
         }
     }

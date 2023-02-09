@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Course_appForms.MainTheme">
+    <Color x:Key ="Main">#006EA6</Color>
+    <Color x:Key="BlueDark">#003149</Color>
+</ResourceDictionary>

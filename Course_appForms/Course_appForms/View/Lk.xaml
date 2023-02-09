@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Course_appForms.View.Lk"
+             Shell.NavBarIsVisible="False"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
+    <StackLayout Spacing="0" Margin="0" Padding="0">
+        <StackLayout Orientation="Horizontal" BackgroundColor="{DynamicResource Main}" Padding="5">
+            <Frame CornerRadius="150" WidthRequest="15" BackgroundColor="White">
+                <Image Source="LOGO_NATK.jpg" Aspect="AspectFill" Scale="3.8"/>
+            </Frame>
+            <Label Text="Личный кабинет" VerticalOptions="Center" FontSize="25" FontAttributes="Bold" TextColor="White"/>
+        </StackLayout>
+        <StackLayout Padding="15,10,15,20">
+            <Frame Padding="0" BackgroundColor="{DynamicResource Main}" BorderColor="Black" Margin="0,0,0,-6" CornerRadius="0">
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout>
+                        <Frame Padding="2" Margin="10,10,0,10" BorderColor="White" CornerRadius="100" HeightRequest="100" WidthRequest="100">
+                            <Frame Padding="0">
+                                <controls:CircleImage Source="a123.jpg" Aspect="AspectFill"/>
+                            </Frame>
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="EndAndExpand">
+                        <Label x:Name="LbFIO" Text="" 
+                               HorizontalTextAlignment="End" 
+                               Padding="0,5,10,0" 
+                               FontSize="20" 
+                               FontAttributes="Bold" 
+                               TextColor="White"/>
+                        <Label x:Name="LbRole" Text="" 
+                               HorizontalTextAlignment="End" 
+                               Padding="0,0,10,0" 
+                               FontSize="16"
+                               TextColor="White"/>
+                        <Label x:Name="LbGroup" Text="" 
+                               HorizontalTextAlignment="End" 
+                               Padding="0,0,10,0" 
+                               FontSize="16"
+                               TextColor="White"/>
+                        <Label x:Name="LbSubGroup" Text="" 
+                               HorizontalTextAlignment="End" 
+                               Padding="0,0,10,5" 
+                               FontSize="16"
+                               TextColor="White"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <Frame IsVisible="False" x:Name="FrMarks" Padding="1" BackgroundColor="{DynamicResource Main}" BorderColor="Black"  CornerRadius="0" Margin="0,0,0,-6" HeightRequest="100">
+                <Button x:Name="BtnMarksReport" Text="Зачетная книжка" TextColor="White" BackgroundColor="{DynamicResource Main}"  TextTransform="None" FontSize="22" Clicked="BtnMarksReport_OnClicked"/>
+            </Frame>
+            <Frame IsVisible="False" Padding="1" BackgroundColor="{DynamicResource Main}" BorderColor="Black"  CornerRadius="0" HeightRequest="100" HorizontalOptions="FillAndExpand">
+                <Button x:Name="BtnAchievements" Text="Достижения" TextColor="White" BackgroundColor="{DynamicResource Main}"  TextTransform="None" FontSize="22" Clicked="BtnAchievements_OnClicked"/>
+            </Frame>
+            
+        </StackLayout>
+        <Label Text="Разработал Молотков Даниил&#10;molotkov.58@ya.ru" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" FontSize="18" Padding="0,0,0,10" TextColor="DarkGray" Margin="0"/>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Course_appForms.Login">
+
+    <Grid BackgroundColor="{DynamicResource Main}" ColumnDefinitions="0.15*,0.7*,0.15*" RowDefinitions="0.1*,0.9*">
+        <StackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" WidthRequest="280">
+            <Label Text="НАТК" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold" TextColor="White"/>
+            <Frame CornerRadius="200" HeightRequest="100" HorizontalOptions="Center">
+                <Image Source="LOGO_NATK.jpg"/>
+            </Frame>
+            <Label Text="Авторизация" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold" TextColor="White"/>
+            <Entry x:Name="EntLogin" Placeholder="Логин" HorizontalTextAlignment="Center"/>
+            <Entry x:Name="EntPassword" Placeholder="Пароль" HorizontalTextAlignment="Center" IsPassword="True"/>
+            <Button Clicked="Login_Clicked" Text="Войти" CornerRadius="10" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold" TextColor="White" BackgroundColor="{DynamicResource BlueDark}"/>
+        </StackLayout>
+    </Grid>
+</ContentPage>

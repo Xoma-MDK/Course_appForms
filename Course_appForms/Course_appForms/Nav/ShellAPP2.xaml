@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:View="clr-namespace:Course_appForms.View"
+             x:Class="Course_appForms.ShellAPP2"
+       BackgroundColor="#006EA6"
+       TabBarUnselectedColor="White"
+       TabBarTitleColor="{DynamicResource BlueDark}"
+        >
+    <TabBar>
+        <Tab Title="Расписание" Icon="shedule_icon.png" >
+            <ShellContent ContentTemplate="{DataTemplate View:Shedule2}"/>
+        </Tab>
+        <Tab Title="Кабинеты" Icon="shedule_icon.png">
+            <ShellContent ContentTemplate="{DataTemplate View:SheduleClassRoom}"/>
+        </Tab>
+        <Tab Title="Профиль" Icon="lk_icon.png">
+            <ShellContent ContentTemplate="{DataTemplate View:Lk}"/>
+        </Tab>
+    </TabBar>
+</Shell>

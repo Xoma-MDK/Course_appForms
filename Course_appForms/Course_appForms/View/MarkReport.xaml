@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Course_appForms.View.MarkReport"
+             Shell.NavBarIsVisible="False">
+    <StackLayout>
+        <StackLayout Orientation="Horizontal" BackgroundColor="{DynamicResource Main}" Padding="5">
+            <Frame CornerRadius="150" WidthRequest="15" BackgroundColor="White">
+                <Image Source="LOGO_NATK.jpg" Aspect="AspectFill" Scale="3.8"/>
+            </Frame>
+            <Label Text="Зачетная книжка" VerticalOptions="Center" FontSize="25" FontAttributes="Bold" TextColor="White"/>
+        </StackLayout>
+        <Grid RowDefinitions="*" ColumnDefinitions="*,*,*,*" ColumnSpacing="0" Padding="0" Margin="30,-6,30,0">
+            <Frame Padding="0" Grid.Column="0" CornerRadius="0" BorderColor="Black">
+                <Button CornerRadius="0" BackgroundColor="{DynamicResource Main}" Text="1 курс" Margin="1" WidthRequest="50" HeightRequest="60"  HorizontalOptions="FillAndExpand" Padding="0"/>
+            </Frame>
+            <Frame Padding="0" Grid.Column="1" CornerRadius="0" BorderColor="Black">
+                <Button BackgroundColor="{DynamicResource Main}" CornerRadius="0" Text="2 курс" Margin="1" WidthRequest="50" HeightRequest="60"  HorizontalOptions="FillAndExpand" Padding="0"/>
+            </Frame>
+            <Frame Padding="0" Grid.Column="2" CornerRadius="0" BorderColor="Black">
+                <Button BackgroundColor="{DynamicResource Main}" CornerRadius="0" Text="3 курс" Margin="1" WidthRequest="50" HeightRequest="60"  HorizontalOptions="FillAndExpand" Padding="0"/>
+            </Frame>
+            <Frame   Padding="0" Grid.Column="3" CornerRadius="0" BorderColor="Black">
+                <Button CornerRadius="0" BackgroundColor="{DynamicResource Main}" Text="4 курс" Margin="1" WidthRequest="50" HeightRequest="60"  HorizontalOptions="FillAndExpand" Padding="0"/>
+            </Frame>
+        </Grid>
+        <Grid RowDefinitions="*" ColumnDefinitions="*,*" ColumnSpacing="0" Padding="0" Margin="30,-6,30,0" HorizontalOptions="CenterAndExpand">
+            <Frame Padding="0" Grid.Column="0" CornerRadius="0" BorderColor="Black">
+                <Button CornerRadius="0" BackgroundColor="{DynamicResource Main}" Text="1 семестр" Margin="1" WidthRequest="50" HeightRequest="60"  HorizontalOptions="FillAndExpand" Padding="0"/>
+            </Frame>
+            <Frame Padding="0" Grid.Column="1" CornerRadius="0" BorderColor="Black">
+                <Button BackgroundColor="{DynamicResource Main}" CornerRadius="0" Text="2 семестр" Margin="1" WidthRequest="50" HeightRequest="60"  HorizontalOptions="FillAndExpand" Padding="0"/>
+            </Frame>
+        </Grid>
+        <ScrollView Orientation="Vertical">
+            <StackLayout Orientation="Vertical" Spacing="0" Padding="0,0,0,0"
+                                                 BindableLayout.ItemsSource="{Binding listMarkReport}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame Padding="0">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="123"/>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

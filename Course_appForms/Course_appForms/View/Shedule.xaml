@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Course_appForms.View.Shedule"
+             Shell.NavBarIsVisible="False">
+    <StackLayout>
+        <StackLayout Orientation="Horizontal" BackgroundColor="{DynamicResource Main}" Padding="5">
+            <Frame CornerRadius="150" WidthRequest="15" BackgroundColor="White">
+                <Image Source="LOGO_NATK.jpg" Aspect="AspectFill" Scale="3.8"/>
+            </Frame>
+            <Label Text="Расписание" VerticalOptions="Center" FontSize="25" FontAttributes="Bold" TextColor="White"/>
+            <Label x:Name="lbGroup" Text="" HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" VerticalOptions="Center" TextColor="White" FontAttributes="Bold" Padding="0,0, 5, 0"/>
+        </StackLayout>
+        <RefreshView x:Name="refreshView">
+            <CollectionView Margin="20, 0,20,5" x:Name="CvShedule" HorizontalOptions="Start">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" >
+                    </LinearItemsLayout>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Frame CornerRadius="0" BorderColor="Black" Padding="1" Margin="0" >
+                                <StackLayout>
+                                    <Frame BackgroundColor="{DynamicResource Main}" 
+                                       Padding="0" 
+                                       HeightRequest="40" 
+                                       CornerRadius="0"
+                                       BorderColor="Black"
+                                       Margin="0,0,0,-11" 
+                                       VerticalOptions="StartAndExpand">
+                                        <Label Text="{Binding Date}" 
+                                           TextColor="White" 
+                                           FontAttributes="Bold"
+                                           HorizontalOptions="Center" 
+                                           VerticalOptions="CenterAndExpand"
+                                           FontSize="16"
+                                           Padding="0"/>
+                                    </Frame>
+                                    <ScrollView Orientation="Vertical" >
+                                        <StackLayout Orientation="Vertical" Spacing="0" Padding="0,0,0,0"
+                                                 BindableLayout.ItemsSource="{Binding listOfLessons}">
+                                            <BindableLayout.ItemTemplate>
+                                                <DataTemplate>
+                                                    <Frame Padding="0,0,0,0" BorderColor="Black" CornerRadius="0">
+                                                        <Grid ColumnDefinitions="0.18*,0.82*" >
+                                                            <StackLayout Grid.Column="0"  Padding="5,0,0,0">
+                                                                <Label Text="{Binding Number}" 
+                                                               TextColor="Black" 
+                                                               FontSize="16"
+                                                               VerticalOptions="StartAndExpand"
+                                                               Padding="5,5,0,0"/>
+                                                                <Label Text="{Binding Time}" 
+                                                               TextColor="Black" 
+                                                               FontAttributes="Bold" 
+                                                               FontSize="16" 
+                                                               VerticalOptions="EndAndExpand"
+                                                               Padding="5,15,0,5"/>
+                                                            </StackLayout>
+                                                            <StackLayout Grid.Column="1" HorizontalOptions="EndAndExpand"  Padding="0,5,10,5">
+                                                                <Label Text="{Binding Title}" 
+                                                                       TextColor="Black" 
+                                                                       FontAttributes="Bold" 
+                                                                       VerticalOptions="StartAndExpand"
+                                                                       HorizontalTextAlignment="End"
+                                                                       Padding="0,0,0,2"/>
+                                                                <Label Text="{Binding Teacher}" 
+                                                                       TextColor="Black" 
+                                                                       VerticalOptions="CenterAndExpand"
+                                                                       HorizontalTextAlignment="End"
+                                                                       Padding="0,0,0,2"/>
+                                                                <Label Text="{Binding ClassRoom}" 
+                                                                       TextColor="Black" 
+                                                                       VerticalOptions="EndAndExpand"
+                                                                       HorizontalTextAlignment="End"
+                                                                       Padding="0,0,0,1"/>
+                                                            </StackLayout>
+                                                        </Grid>
+                                                    </Frame>
+                                                </DataTemplate>
+                                            </BindableLayout.ItemTemplate>
+                                        </StackLayout>
+                                    </ScrollView>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
+        
+    </StackLayout>
+</ContentPage>

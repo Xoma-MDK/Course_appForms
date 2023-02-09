@@ -9,7 +9,7 @@
         >
     <TabBar>
         <Tab Title="Расписание" Icon="shedule_icon.png" >
-            <ShellContent ContentTemplate="{DataTemplate View:Shedule2}"/>
+            <ShellContent ContentTemplate="{DataTemplate View:Shedule}"/>
         </Tab>
         <Tab Title="Кабинеты" Icon="shedule_icon.png">
             <ShellContent ContentTemplate="{DataTemplate View:SheduleClassRoom}"/>

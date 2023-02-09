@@ -5,6 +5,7 @@
 		<!-- Debug port -->
 		<domain includeSubdomains="true">xamarin.com</domain>
 		<domain includeSubdomains="true">193.37.70.15</domain>
+		<domain includeSubdomains="true">176.126.103.27</domain>
 
 	</domain-config>
 </network-security-config>

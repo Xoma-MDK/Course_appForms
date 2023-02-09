@@ -8,7 +8,7 @@
        TabBarTitleColor="{DynamicResource BlueDark}"
         >
     <TabBar>
-        <Tab Title="Пары" Icon="shedule_icon.png" >
+        <Tab Title="Занятия" Icon="shedule_icon.png" >
             <ShellContent ContentTemplate="{DataTemplate View:Shedule}"/>
         </Tab>
         <Tab Title="Кабинеты" Icon="shedule_icon.png">

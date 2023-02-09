@@ -14,13 +14,13 @@ namespace Course_appForms.Http
         {
             return JsonConvert.DeserializeObject<List<Models.Shedule>>(await Api.TokenyzeGet($"shedule/get?group={Group}&subgroup={subGroup}", tokens));
         }
-        public static async Task<List<Models.Shedule2>> GetSheduleTeacher(string FIO, Tokens tokens)
+        public static async Task<List<Models.Shedule>> GetSheduleTeacher(string FIO, Tokens tokens)
         {
-            return JsonConvert.DeserializeObject<List<Models.Shedule2>>(await Api.TokenyzeGet($"shedule/get/teacher?fio={FIO}", tokens));
+            return JsonConvert.DeserializeObject<List<Models.Shedule>>(await Api.TokenyzeGet($"shedule/get/teacher?fio={FIO}", tokens));
         }
-        public static async Task<List<Models.SheduleClassRoom>> GetSheduleClassRoom(string ClassRoom, Tokens tokens)
+        public static async Task<List<Models.Shedule>> GetSheduleClassRoom(string ClassRoom, Tokens tokens)
         {
-            return JsonConvert.DeserializeObject<List<Models.SheduleClassRoom>>(await Api.TokenyzeGet($"shedule/get/classroom?classroom={ClassRoom}", tokens));
+            return JsonConvert.DeserializeObject<List<Models.Shedule>>(await Api.TokenyzeGet($"shedule/get/classroom?classroom={ClassRoom}", tokens));
         }
         public static async Task<List<Models.ClassRoom>> GetSheduleClassRooms(string corpus, Tokens tokens)
         {

@@ -33,9 +33,6 @@
     <Compile Update="View\SheduleClassRoom.xaml.cs">
       <DependentUpon>SheduleClassRoom.xaml</DependentUpon>
     </Compile>
-    <Compile Update="View\Shedule2.xaml.cs">
-      <DependentUpon>Shedule2.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
 
   <ItemGroup>

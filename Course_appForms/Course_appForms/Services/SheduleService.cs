@@ -26,7 +26,7 @@ namespace Course_appForms.Services
                 return null;
             }
         }
-        public static async Task<List<Models.Shedule2>> GetSheduleTeacher(string FIO)
+        public static async Task<List<Models.Shedule>> GetSheduleTeacher(string FIO)
         {
             try
             {
@@ -42,7 +42,7 @@ namespace Course_appForms.Services
                 return null;
             }
         }
-        public static async Task<List<Models.SheduleClassRoom>> GetSheduleClassRoom(string ClassRoom)
+        public static async Task<List<Models.Shedule>> GetSheduleClassRoom(string ClassRoom)
         {
             try
             {

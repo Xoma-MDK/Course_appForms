@@ -7,7 +7,7 @@
         <StackLayout Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" WidthRequest="280">
             <Label Text="НАТК" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold" TextColor="White"/>
             <Frame CornerRadius="200" HeightRequest="100" HorizontalOptions="Center">
-                <Image Source="LOGO_NATK.jpg"/>
+                <Image Source="LOGO_NATK.jpg" BackgroundColor="White"/>
             </Frame>
             <Label Text="Авторизация" HorizontalOptions="Center" FontSize="30" FontAttributes="Bold" TextColor="White"/>
             <Entry x:Name="EntLogin" Placeholder="Логин" HorizontalTextAlignment="Center"/>

@@ -26,5 +26,9 @@ namespace Course_appForms.Http
         {
             return JsonConvert.DeserializeObject<List<Models.ClassRoom>>(await Api.TokenyzeGet($"shedule/get/classrooms?corpus={corpus}", tokens));
         }
+        public static async Task<List<Models.Build>> GetSheduleBuilds(Tokens tokens)
+        {
+            return JsonConvert.DeserializeObject<List<Models.Build>>(await Api.TokenyzeGet($"shedule/get/builds", tokens));
+        }
     }
 }

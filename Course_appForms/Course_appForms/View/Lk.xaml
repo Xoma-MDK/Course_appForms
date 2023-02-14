@@ -4,15 +4,13 @@
              x:Class="Course_appForms.View.Lk"
              Shell.NavBarIsVisible="False"
              xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin">
-    <StackLayout Spacing="0" Margin="0" Padding="0">
+    <StackLayout Spacing="0" Margin="0" Padding="0" BackgroundColor="{AppThemeBinding Light=#fff, Dark=#171717}">
         <StackLayout Orientation="Horizontal" BackgroundColor="{DynamicResource Main}" Padding="5">
             <Frame CornerRadius="150" WidthRequest="15" BackgroundColor="White">
                 <Image Source="LOGO_NATK.jpg" Aspect="AspectFill" Scale="3.8"/>
             </Frame>
             <Label Text="Личный кабинет" VerticalOptions="Center" FontSize="25" FontAttributes="Bold" TextColor="White"/>
-            
-                <ImageButton x:Name="BtnLogout" CornerRadius="150" Source="exit.png" BackgroundColor="{DynamicResource Main}" WidthRequest="50" HorizontalOptions="EndAndExpand" Clicked="BtnLogout_OnClicked"/>
-            
+            <ImageButton x:Name="BtnLogout"  Source="exit.png" BackgroundColor="{DynamicResource Main}" WidthRequest="50" Scale="0.8" Padding="0" Margin="0" HorizontalOptions="EndAndExpand" Clicked="BtnLogout_OnClicked"/>
         </StackLayout>
         <StackLayout Padding="15,10,15,20">
             <Frame Padding="0" BackgroundColor="{DynamicResource Main}" BorderColor="Black" Margin="0,0,0,-6" CornerRadius="0">

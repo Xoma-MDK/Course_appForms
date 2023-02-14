@@ -128,9 +128,6 @@
     <AndroidResource Include="Resources\drawable\myIcon.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\logout.png" />
-  </ItemGroup>
-  <ItemGroup>
     <AndroidResource Include="Resources\xml\network_security_config.xml" />
   </ItemGroup>
   <ItemGroup>

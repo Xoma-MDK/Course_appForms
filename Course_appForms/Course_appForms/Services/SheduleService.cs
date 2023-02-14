@@ -74,5 +74,21 @@ namespace Course_appForms.Services
                 return null;
             }
         }
+        public static async Task<List<Models.Build>> GetSheduleBuilds()
+        {
+            try
+            {
+                string at = await SecureStorage.GetAsync(StorageKey.AccessToken);
+                string rt = await SecureStorage.GetAsync(StorageKey.RefreshToken);
+
+                Tokens tok = new Tokens() { AccessToken = at, RefreshToken = rt };
+                return await SheduleApi.GetSheduleBuilds(tok);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
     }
 }

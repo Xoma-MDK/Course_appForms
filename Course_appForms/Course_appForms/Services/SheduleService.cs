@@ -42,7 +42,7 @@ namespace Course_appForms.Services
                 return null;
             }
         }
-        public static async Task<List<Models.Shedule>> GetSheduleClassRoom(string ClassRoom)
+        public static async Task<List<Models.Shedule>> GetSheduleClassRoom(string ClassRoom, string Build)
         {
             try
             {
@@ -50,7 +50,7 @@ namespace Course_appForms.Services
                 string rt = await SecureStorage.GetAsync(StorageKey.RefreshToken);
 
                 Tokens tok = new Tokens() { AccessToken = at, RefreshToken = rt };
-                return await SheduleApi.GetSheduleClassRoom(ClassRoom, tok);
+                return await SheduleApi.GetSheduleClassRoom(ClassRoom, Build, tok);
             }
             catch (Exception ex)
             {

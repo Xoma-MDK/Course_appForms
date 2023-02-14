@@ -18,9 +18,9 @@ namespace Course_appForms.Http
         {
             return JsonConvert.DeserializeObject<List<Models.Shedule>>(await Api.TokenyzeGet($"shedule/get/teacher?fio={FIO}", tokens));
         }
-        public static async Task<List<Models.Shedule>> GetSheduleClassRoom(string ClassRoom, Tokens tokens)
+        public static async Task<List<Models.Shedule>> GetSheduleClassRoom(string ClassRoom, string Build, Tokens tokens)
         {
-            return JsonConvert.DeserializeObject<List<Models.Shedule>>(await Api.TokenyzeGet($"shedule/get/classroom?classroom={ClassRoom}", tokens));
+            return JsonConvert.DeserializeObject<List<Models.Shedule>>(await Api.TokenyzeGet($"shedule/get/classroom?classroom={ClassRoom}&build={Build}", tokens));
         }
         public static async Task<List<Models.ClassRoom>> GetSheduleClassRooms(string corpus, Tokens tokens)
         {

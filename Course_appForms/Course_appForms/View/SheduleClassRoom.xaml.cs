@@ -56,9 +56,10 @@ namespace Course_appForms.View
                 return;
             }
             PicClassRoom.IsEnabled = false;
-            var temp = (ClassRoom)PicClassRoom.SelectedItem;
-            var classRoom = await SheduleService.GetSheduleClassRoom(temp.Title);
-            CvSheduleClassRoom.ItemsSource = classRoom;
+            var classRoom = (ClassRoom)PicClassRoom.SelectedItem;
+            var build = (Build)PicBuild.SelectedItem;
+            var sheduleClassRoom = await SheduleService.GetSheduleClassRoom(classRoom.Title, build.Title);
+            CvSheduleClassRoom.ItemsSource = sheduleClassRoom;
             PicClassRoom.IsEnabled =true;
             RVClassRoom.IsRefreshing = false;
         }

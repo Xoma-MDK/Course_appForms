@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -25,7 +25,7 @@ namespace Course_appForms.View
 
         protected void Load()
         {
-            LbFIO.Text = $"{user.Surname} {user.Name}\n{user.Patronymic}";
+            LbFIO.Text = $"{user.Surname} {user.Name[0]}. {user.Patronymic[0]}.";
             if (user.Role == 1)
             {
                 LbGroup.Text = user.Studygroup;
@@ -52,6 +52,8 @@ namespace Course_appForms.View
         {
             AuthService.Logout();
             Application.Current.Properties.Remove("user");
+            Preferences.Remove("user");
+            App.Database.TruncateTable();
             Application.Current.MainPage = new Login();
         }
     }

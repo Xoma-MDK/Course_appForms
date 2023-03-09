@@ -2,3 +2,6 @@
 
 # CS0067: Событие "Shedule.RefreshCommand.CanExecuteChanged" никогда не используется.
 dotnet_diagnostic.CS0067.severity = error
+
+# IDE0044: Добавить модификатор только для чтения
+dotnet_diagnostic.IDE0044.severity = none

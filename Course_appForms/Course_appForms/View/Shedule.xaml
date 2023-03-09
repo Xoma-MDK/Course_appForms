@@ -9,9 +9,10 @@
             <Frame CornerRadius="150" WidthRequest="15" BackgroundColor="White">
                 <Image Source="LOGO_NATK.jpg" Aspect="AspectFill" Scale="3.8"/>
             </Frame>
-            <Label Text="Расписание" VerticalOptions="Center" FontSize="25" FontAttributes="Bold" TextColor="White"/>
-            <Label x:Name="lbGroup" Text="" HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" VerticalOptions="Center" TextColor="White" FontAttributes="Bold" Padding="0,0, 5, 0"/>
+            <Label Text="Расписание" HorizontalTextAlignment="End" VerticalOptions="CenterAndExpand" HorizontalOptions="Start" FontSize="25" FontAttributes="Bold" TextColor="White"/>
+            <Label x:Name="lbGroup" Text="" HorizontalTextAlignment="End" HorizontalOptions="EndAndExpand" VerticalOptions="Center" TextColor="White" FontAttributes="Bold" Padding="0,0, 5, 0" />
         </StackLayout>
+        <Label x:Name="lbInfo" FontSize="20" Text="" IsVisible="False" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" TextColor="{AppThemeBinding Light=#000, Dark=#fff}" FontAttributes="Bold" Padding="5,0, 5, 0" />
         <RefreshView x:Name="refreshView" BackgroundColor="{AppThemeBinding Light=#fff, Dark=#949494}">
             <CollectionView Margin="20, 0,20,5" x:Name="CvShedule" HorizontalOptions="Start" BackgroundColor="{AppThemeBinding Light=#fff, Dark=#171717}">
                 <CollectionView.ItemsLayout>
@@ -41,7 +42,6 @@
                                     <ScrollView Orientation="Vertical" >
                                         <StackLayout Orientation="Vertical" Spacing="0" Padding="0,0,0,0"
                                                  BindableLayout.ItemsSource="{Binding listOfLessons}" BindableLayout.ItemTemplateSelector="{StaticResource sheduleDataTemplateSelector}">
-                                            
                                         </StackLayout>
                                     </ScrollView>
                                 </StackLayout>
@@ -77,11 +77,15 @@
                                                                        VerticalOptions="StartAndExpand"
                                                                        HorizontalTextAlignment="End"
                                                                        Padding="0,0,0,2"/>
-                            <Label Text="{Binding Teacher}" 
-                                   TextColor="{AppThemeBinding Light=#000, Dark=#fff}"
-                                                                       VerticalOptions="CenterAndExpand"
-                                                                       HorizontalTextAlignment="End"
-                                                                       Padding="0,0,0,2"/>
+                            <view:IdLable LbId="0" Text="{Binding Teacher}" 
+                                          TextColor="{AppThemeBinding Light=#000, Dark=#fff}"
+                                          VerticalOptions="CenterAndExpand"
+                                          HorizontalTextAlignment="End"
+                                          Padding="0,0,0,2">
+                                <view:IdLable.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"/>
+                                </view:IdLable.GestureRecognizers>
+                            </view:IdLable>
                             <Label Text="{Binding ClassRoom}" 
                                                                        TextColor="{AppThemeBinding Light=#000, Dark=#fff}" 
                                                                        VerticalOptions="EndAndExpand"
@@ -114,12 +118,16 @@
                                                                VerticalOptions="StartAndExpand"
                                                                HorizontalTextAlignment="End"
                                                                Padding="0,0,0,2"/>
-                            <Label Text="{Binding Group}" 
+                            <view:IdLable LbId="1" Text="{Binding Group}" 
                                                                TextColor="{AppThemeBinding Light=#000, Dark=#fff}" 
                                                                VerticalOptions="CenterAndExpand"
                                                                HorizontalTextAlignment="End"
                                                                Padding="0,0,0,2"
-                                                               />
+                                                               >
+                                <view:IdLable.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped"/>
+                                </view:IdLable.GestureRecognizers>
+                            </view:IdLable>
                             <Label Text="{Binding ClassRoom}" 
                                                                TextColor="{AppThemeBinding Light=#000, Dark=#fff}" 
                                                                VerticalOptions="EndAndExpand"

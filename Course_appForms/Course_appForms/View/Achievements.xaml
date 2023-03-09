@@ -2,11 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Course_appForms.View.Achievements">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+    <StackLayout Spacing="0" Margin="0" Padding="0" BackgroundColor="{AppThemeBinding Light=#fff, Dark=#171717}">
+        <StackLayout Orientation="Horizontal" BackgroundColor="{DynamicResource Main}" Padding="5">
+            <Frame CornerRadius="150" WidthRequest="15" BackgroundColor="White">
+                <Image Source="LOGO_NATK.jpg" Aspect="AspectFill" Scale="3.8"/>
+            </Frame>
+            <Label Text="Достижения" VerticalOptions="Center" FontSize="25" FontAttributes="Bold" TextColor="White"/>
         </StackLayout>
-    </ContentPage.Content>
+        <Label VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="20" Text="Функционал будет доступен в следующих обновлениях"></Label>
+    </StackLayout>
 </ContentPage>

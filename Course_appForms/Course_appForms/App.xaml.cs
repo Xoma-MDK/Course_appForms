@@ -6,6 +6,7 @@ using Xamarin.Forms;
 
 using Xamarin.Forms.Xaml;
 
+
 namespace Course_appForms
 {
     public partial class App : Application

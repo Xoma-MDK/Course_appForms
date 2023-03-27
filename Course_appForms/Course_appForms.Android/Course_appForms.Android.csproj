@@ -57,8 +57,10 @@
     <AndroidSupportedAbis />
     <AndroidLinkMode>None</AndroidLinkMode>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
-    <AndroidKeyStore>false</AndroidKeyStore>
+    <AndroidKeyStore>true</AndroidKeyStore>
     <AndroidSigningKeyStore>C:\Users\molot\AppData\Local\Xamarin\Mono for Android\Keystore\Xomic\Xomic.keystore</AndroidSigningKeyStore>
+    <AndroidSigningStorePass>06Qrb05MDK</AndroidSigningStorePass>
+    <AndroidSigningKeyPass>06Qrb05MDK</AndroidSigningKeyPass>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
@@ -71,9 +73,9 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>13.0.2</Version>
+      <Version>13.0.3</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2545" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2578" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.5" />
   </ItemGroup>
   <ItemGroup>

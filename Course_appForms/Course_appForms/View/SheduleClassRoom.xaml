@@ -11,7 +11,7 @@
             <Label Text="Расписание" VerticalOptions="Center" FontSize="25" FontAttributes="Bold" TextColor="White"/>
         </StackLayout>
         <StackLayout Padding="0" Margin="0" >
-            <Picker Title="Выберите филиал" 
+            <Picker Title="Выберите корпус" 
                     Margin="20,0,20,0" 
                     SelectedIndexChanged="PicBuild_OnSelectedIndexChanged" 
                     x:Name="PicBuild" 

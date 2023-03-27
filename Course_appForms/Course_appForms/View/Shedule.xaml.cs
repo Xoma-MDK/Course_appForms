@@ -173,12 +173,10 @@ namespace Course_appForms.View
                 var LbSender = (IdLable)sender;
                 if (LbSender.LbId == 0)
                 {
-                    //await this.DisplayToastAsync($"{LbSender.Text}", 2000);
                     await Navigation.PushModalAsync(new Shedule(Teacher:LbSender.Text));
                 }
                 else if (LbSender.LbId == 1)
                 {
-                    //await this.DisplayToastAsync($"{LbSender.Text}", 2000);
                     await Navigation.PushModalAsync(new Shedule(Group:LbSender.Text));
                 }
             }
@@ -189,11 +187,19 @@ namespace Course_appForms.View
     {
         public DataTemplate StudentTemplate { get; set; }
         public DataTemplate TeacherTemplate { get; set; }
+        public DataTemplate CenterLessonStudentTemplate { get; set; }
 
         protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
         {
-            if (((Lesson)item).Mode == 0) return StudentTemplate;
-            if (((Lesson)item).Mode == 1) return TeacherTemplate;
+            if (((Lesson)item).Mode == 0)
+            {
+                if (((Lesson)item).Number == 0) return CenterLessonStudentTemplate;
+            }
+            else
+            {
+                if (((Lesson)item).Mode == 1) return TeacherTemplate;
+                return StudentTemplate;
+            }
             return StudentTemplate;
         }
     }

@@ -11,5 +11,6 @@
         public string Time { get; set;}
         public int subStudyGroup { get; set; }
 
+        public string GetNumber => Number == 0 ? string.Empty : Number.ToString();
     }
 }

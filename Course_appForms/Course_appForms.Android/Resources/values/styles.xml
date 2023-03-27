@@ -15,5 +15,6 @@
          which is used to tint widgets -->
     <!--<item name="colorAccent">#FF4081</item>-->
     <item name="android:forceDarkAllowed">false</item>
+	 <item name="android:navigationBarColor">@color/Main</item>
   </style>
 </resources>

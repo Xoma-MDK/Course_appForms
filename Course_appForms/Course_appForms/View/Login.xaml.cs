@@ -17,10 +17,16 @@ namespace Course_appForms
         public Login()
         {
             InitializeComponent();
+            var tapGestureRecognizer = new TapGestureRecognizer();
+            tapGestureRecognizer.Tapped += async (s, e) => { 
+                await Launcher.OpenAsync(new Uri("https://t.me/xomic"));
+            };
+            LbRegister.GestureRecognizers.Add(tapGestureRecognizer);
         }
         private async void Login_Clicked(object sender, EventArgs e)
         {
             loadingIndicator.IsRunning = true;
+            loadingIndicator.IsVisible = true;
             LbLoad.IsVisible = true;
             if (Connectivity.NetworkAccess != NetworkAccess.Internet)
             {

@@ -45,7 +45,9 @@ namespace Course_appForms.View
 
         private async void BtnAchievements_OnClicked(object sender, EventArgs e)
         {
+            BtnAchievements.IsEnabled = false;
             await Navigation.PushModalAsync(new Achievements());
+            BtnAchievements.IsEnabled = true;
         }
 
         private void BtnLogout_OnClicked(object sender, EventArgs e)

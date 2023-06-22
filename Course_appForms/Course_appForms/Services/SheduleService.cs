@@ -90,5 +90,37 @@ namespace Course_appForms.Services
                 return null;
             }
         }
+        public static async Task<List<Models.Group>> GetSheduleGroups()
+        {
+            try
+            {
+                string at = await SecureStorage.GetAsync(StorageKey.AccessToken);
+                string rt = await SecureStorage.GetAsync(StorageKey.RefreshToken);
+
+                Tokens tok = new Tokens() { AccessToken = at, RefreshToken = rt };
+                return await SheduleApi.GetGroups(tok);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
+        public static async Task<List<Models.Teacher>> GetSheduleTeachers()
+        {
+            try
+            {
+                string at = await SecureStorage.GetAsync(StorageKey.AccessToken);
+                string rt = await SecureStorage.GetAsync(StorageKey.RefreshToken);
+
+                Tokens tok = new Tokens() { AccessToken = at, RefreshToken = rt };
+                return await SheduleApi.GetTeachers(tok);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
     }
 }

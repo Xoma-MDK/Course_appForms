@@ -41,10 +41,7 @@ namespace Course_appForms
             {
                 User user = await UserService.GetMe();
                 Application.Current.Properties["user"] = user;
-                if (user.Role == 1)
-                    Application.Current.MainPage = new ShellAPP();
-                if (user.Role == 2)
-                    Application.Current.MainPage = new ShellAPP2();
+                Application.Current.MainPage = new ShellAPP();
             }
             else
             {

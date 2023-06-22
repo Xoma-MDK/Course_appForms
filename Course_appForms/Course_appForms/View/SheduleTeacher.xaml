@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Course_appForms.View.SheduleClassroom"
-             Shell.NavBarIsVisible="False">
+             x:Class="Course_appForms.View.SheduleTeacher">
     <StackLayout BackgroundColor="{AppThemeBinding Light=#fff, Dark=#171717}">
         <StackLayout Orientation="Horizontal" BackgroundColor="{DynamicResource Main}" Padding="5" Margin="0">
             <Frame CornerRadius="150" WidthRequest="15" BackgroundColor="White">
@@ -11,10 +10,10 @@
             <Label Text="Расписание" VerticalOptions="Center" FontSize="25" FontAttributes="Bold" TextColor="White"/>
         </StackLayout>
         <StackLayout Padding="0" Margin="0" >
-            <Picker Title="Выберите корпус" 
+            <Picker Title="Выберите преподавателя" 
                     Margin="20,0,20,0" 
-                    SelectedIndexChanged="PicBuild_OnSelectedIndexChanged" 
-                    x:Name="PicBuild" 
+                    SelectedIndexChanged="PicTeacher_SelectedIndexChanged"
+                    x:Name="PicTeacher" 
                     BackgroundColor="{DynamicResource Main}" 
                     HorizontalTextAlignment="Center" 
                     ItemDisplayBinding="{Binding Title}" 
@@ -22,19 +21,8 @@
                     TextColor="{AppThemeBinding Light=#000, Dark=#fff}"
                     TitleColor="{AppThemeBinding Light=#000, Dark=#fff}"
             />
-            <Picker Title="Выберите аудиторию" 
-                    Margin="20,0,20,0" 
-                    SelectedIndexChanged="PicClassRoom_OnSelectedIndexChanged" 
-                    x:Name="PicClassRoom" 
-                    BackgroundColor="{DynamicResource Main}" 
-                    HorizontalTextAlignment="Center" 
-                    ItemDisplayBinding="{Binding Title}" 
-                    IsEnabled="False"
-                    TextColor="{AppThemeBinding Light=#000, Dark=#fff}"
-                    TitleColor="{AppThemeBinding Light=#000, Dark=#fff}"
-            />
-            <RefreshView x:Name="RVClassRoom" BackgroundColor="{AppThemeBinding Light=#fff, Dark=#949494}">
-                <CollectionView Margin="20, 0,20,5" x:Name="CvSheduleClassRoom" HorizontalOptions="Start" BackgroundColor="{AppThemeBinding Light=#fff, Dark=#171717}">
+            <RefreshView x:Name="RVTeacher" BackgroundColor="{AppThemeBinding Light=#fff, Dark=#949494}">
+                <CollectionView Margin="20, 0,20,5" x:Name="CvSheduleTeacher" HorizontalOptions="Start" BackgroundColor="{AppThemeBinding Light=#fff, Dark=#171717}">
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout Orientation="Vertical" ItemSpacing="10" >
                         </LinearItemsLayout>
@@ -88,15 +76,15 @@
                                                                Padding="0,0,0,2"/>
                                                                     <Label Text="{Binding Group}" 
                                                                TextColor="{AppThemeBinding Light=#000, Dark=#fff}" 
+                                                               VerticalOptions="EndAndExpand"
+                                                               HorizontalTextAlignment="End"
+                                                               Padding="0,0,0,1"/>
+                                                                    <Label Text="{Binding ClassRoom}" 
+                                                               TextColor="{AppThemeBinding Light=#000, Dark=#fff}" 
                                                                VerticalOptions="CenterAndExpand"
                                                                HorizontalTextAlignment="End"
                                                                Padding="0,0,0,2"
                                                                />
-                                                                    <Label Text="{Binding Teacher}" 
-                                                               TextColor="{AppThemeBinding Light=#000, Dark=#fff}" 
-                                                               VerticalOptions="EndAndExpand"
-                                                               HorizontalTextAlignment="End"
-                                                               Padding="0,0,0,1"/>
                                                                 </StackLayout>
                                                             </Grid>
                                                         </Frame>
@@ -112,6 +100,5 @@
                 </CollectionView>
             </RefreshView>
         </StackLayout>
-
     </StackLayout>
 </ContentPage>

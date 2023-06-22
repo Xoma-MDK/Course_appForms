@@ -30,5 +30,13 @@ namespace Course_appForms.Http
         {
             return JsonConvert.DeserializeObject<List<Models.Build>>(await Api.TokenyzeGet($"shedule/get/builds", tokens));
         }
+        public static async Task<List<Models.Group>> GetGroups(Tokens tokens)
+        {
+            return JsonConvert.DeserializeObject<List<Models.Group>>(await Api.TokenyzeGet($"shedule/get/groups", tokens));
+        }
+        public static async Task<List<Models.Teacher>> GetTeachers(Tokens tokens)
+        {
+            return JsonConvert.DeserializeObject<List<Models.Teacher>>(await Api.TokenyzeGet($"shedule/get/teachers", tokens));
+        }
     }
 }

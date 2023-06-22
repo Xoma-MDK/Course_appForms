@@ -30,10 +30,7 @@ namespace Course_appForms.View
                 {
                     var user = JsonConvert.DeserializeObject<User>(Preferences.Get("user", null));
                     Application.Current.Properties["user"] = user;
-                    if (user.Role == 1)
-                        Application.Current.MainPage = new ShellAPP();
-                    if (user.Role == 2)
-                        Application.Current.MainPage = new ShellAPP2();
+                    Application.Current.MainPage = new ShellAPP();
                 }
                 else
                 {
@@ -48,10 +45,7 @@ namespace Course_appForms.View
                     Application.Current.Properties["user"] = user;
                     Preferences.Set("user", JsonConvert.SerializeObject(user));
                     await Application.Current.SavePropertiesAsync();
-                    if (user.Role == 1)
-                        Application.Current.MainPage = new ShellAPP();
-                    if (user.Role == 2)
-                        Application.Current.MainPage = new ShellAPP2();
+                    Application.Current.MainPage = new ShellAPP();
                 }
                 else
                     Application.Current.MainPage = new Login();

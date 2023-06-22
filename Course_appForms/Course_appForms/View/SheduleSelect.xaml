@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Course_appForms.View.SheduleSelect"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="{AppThemeBinding Light=#fff, Dark=#171717}">
+            <StackLayout Orientation="Horizontal" BackgroundColor="{DynamicResource Main}" Padding="5" Margin="0">
+                <Frame CornerRadius="150" WidthRequest="15" BackgroundColor="White">
+                    <Image Source="LOGO_NATK.jpg" Aspect="AspectFill" Scale="3.8"/>
+                </Frame>
+                <Label Text="Расписание" VerticalOptions="Center" FontSize="25" FontAttributes="Bold" TextColor="White"/>
+            </StackLayout>
+            <StackLayout VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand">
+                <Frame x:Name="FrGroups" Padding="1" BackgroundColor="{DynamicResource Main}" BorderColor="Black"  CornerRadius="0" Margin="0,0,0,-6" WidthRequest="300" HeightRequest="100">
+                    <Button x:Name="BtnGroups" Text="Группы" TextColor="White" BackgroundColor="{DynamicResource Main}"  TextTransform="None" FontSize="22" Clicked="BtnGroups_Clicked"/>
+                </Frame>
+                <Frame x:Name="FrTeachers" Padding="1" BackgroundColor="{DynamicResource Main}" BorderColor="Black"  CornerRadius="0" Margin="0,0,0,-6" HeightRequest="100">
+                    <Button x:Name="BtnTeachers" Text="Преподаватели" TextColor="White" BackgroundColor="{DynamicResource Main}"  TextTransform="None" FontSize="22" Clicked="BtnTeachers_Clicked"/>
+                </Frame>
+                <Frame x:Name="FrClassrooms" Padding="1" BackgroundColor="{DynamicResource Main}" BorderColor="Black"  CornerRadius="0" Margin="0,0,0,-6" HeightRequest="100">
+                    <Button x:Name="BtnClassrooms" Text="Аудитории" TextColor="White" BackgroundColor="{DynamicResource Main}"  TextTransform="None" FontSize="22" Clicked="BtnClassrooms_Clicked"/>
+                </Frame>
+            </StackLayout>
+            <Label Text="Разработал Молотков Даниил&#10;molotkov.58@ya.ru" HorizontalTextAlignment="Center" VerticalOptions="EndAndExpand" HorizontalOptions="CenterAndExpand" FontSize="18" Padding="0,0,0,10" TextColor="DarkGray" Margin="0"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,24 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Course_appForms.Models;
 using Course_appForms.Services;
 using Xamarin.CommunityToolkit.Extensions;
 using Xamarin.Essentials;
 using Xamarin.Forms;
-using Xamarin.Forms.PlatformConfiguration.WindowsSpecific;
 using Xamarin.Forms.Xaml;
-using Application = Xamarin.Forms.Application;
 
 namespace Course_appForms.View
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class SheduleClassRoom : ContentPage
+	public partial class SheduleClassroom : ContentPage
 	{
-        public SheduleClassRoom()
+        public SheduleClassroom()
 		{
 			InitializeComponent ();
             LoadBuilds();
@@ -78,7 +72,7 @@ namespace Course_appForms.View
             public void Execute(object parameter)
             {
                 
-                SheduleClassRoom shedule = (SheduleClassRoom)parameter;
+                SheduleClassroom shedule = (SheduleClassroom)parameter;
                 if (shedule.PicClassRoom.SelectedIndex == -1)
                 {
                     shedule.DisplayToastAsync("Аудитория не выбрана");

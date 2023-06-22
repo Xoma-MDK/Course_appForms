@@ -32,8 +32,8 @@
     <Compile Update="Nav\ShellAPP.xaml.cs">
       <DependentUpon>ShellAPP.xaml</DependentUpon>
     </Compile>
-    <Compile Update="View\SheduleClassRoom.xaml.cs">
-      <DependentUpon>SheduleClassRoom.xaml</DependentUpon>
+    <Compile Update="View\SheduleClassroom.xaml.cs">
+      <DependentUpon>SheduleClassroom.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -60,6 +60,15 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\Shedule.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\SheduleGroup.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\SheduleSelect.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\SheduleTeacher.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

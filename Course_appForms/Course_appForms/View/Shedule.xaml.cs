@@ -32,7 +32,6 @@ namespace Course_appForms.View
                     return;
                 }
                 _user = (User)Application.Current.Properties["user"];
-                Debug.Print(App.Database.GetItems().FirstOrDefault().SheduleDamp);
                 var list = JsonConvert.DeserializeObject<List<Models.Shedule>>(App.Database.GetItems().FirstOrDefault().SheduleDamp);
                 Device.BeginInvokeOnMainThread(() => CvShedule.ItemsSource = list);
                 if (_user.Role != 2) lbGroup.Text = _user.Studygroup;
